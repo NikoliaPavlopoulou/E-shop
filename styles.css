@@ -1,0 +1,1375 @@
+@font-face{
+  font-family: myFont;
+  src: url(regularfont.ttf);;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: myFont;
+  list-style:none;
+  box-sizing:border-box;
+}
+
+.main{
+  width: 100%;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/image.jpg);
+  background-position: center;/*mpainei sto kentro h eikona*/
+  
+  
+  position: relative;/*wste na prosarmopzoume tis theseis twn stoixeiwn*/
+  
+  background-size: cover; /* Ensure background is fixed */
+  background-attachment: fixed; /* Prevent zooming */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0;
+  
+}
+
+
+
+.header1 h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+  
+}
+
+/*----------------menu-----------------*/
+
+/*allagh megethous logo astraphs*/
+.logoresize{
+  width: 50px; 
+  height: 50px; 
+  display: block; 
+
+  
+}
+
+/*xrwma logo*/
+.logo{
+  color: #ffffff;
+  
+}
+
+
+/*kitrino menu*/
+.nav-menu-bar {
+	position: fixed;/*fixed wste na einai panta stathero sthn eikona*/
+	z-index: 10;/*na emfanizetai panw apo ola ta stoixeia*/
+	left: 0;
+	right: 0;
+	top: 0;
+	background-size: auto;
+	padding: 0 5%;
+	height: 100px;
+	background-color: #ecca0d;
+}
+
+/*electroshock tou menu*/
+nav .logo {
+	float: left;/*na emfanizetai sta aristera*/
+	width: 40%;/*to platos tou periexomenou*/
+	height: 100%;/*to ypsos tou periexomenou*/
+	display: flex;/*fit ola ta stoixeia sthn seira*/
+	align-items: center;/*topothetei ta soixeia sto kentro*/
+	font-size: 35px;/*megethos grammatoseiras*/
+	color: #fff;
+}
+
+
+/*links tou menu */
+nav .links {
+	float: right;
+	padding: 0;
+	margin: 0;
+	width: 60%;
+	height: 100%;
+	display: flex;
+	justify-content: space-around;/*kenw metaxu tous*/
+	align-items: center;
+}
+nav .links li {
+	list-style: none;
+}
+nav .links a {
+	display: block;/*stoixeia emfanizontai se dikia tous grammh*/
+	padding: 1em;/*perithorio*/
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration: none;
+}
+
+/*effect sta links afou metakinhthei panw tous o kersoras*/
+.links li::after{
+	content: '';
+	width: 0%;
+	height: 3px;
+	background: #fff;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+  }
+  
+.links li:hover::after{
+	width: 100%;
+}
+
+
+#nav-toggle {
+	position: absolute;
+	top: -100px;
+}
+
+/*3 pavles icon*/
+nav .icon-burger {
+	display: none;
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+nav .icon-burger .line {
+	width: 30px;
+	height: 5px;
+	background-color: #fff;
+	margin: 5px;
+	border-radius: 3px;
+	transition: all .3s ease-in-out;
+}
+
+/*responsive menu*/
+@media screen and (max-width: 783px) {
+	nav .logo {
+		float: none;
+		width: auto;
+		justify-content: center;
+	}
+	nav .links {
+		float: none;
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		right: 0;
+		top: 100px;
+		bottom: 100%;
+		width: auto;
+		height: auto;
+		flex-direction: column; /*stoixismena se sthlh*/
+		justify-content: space-evenly;
+		background-color: rgba(0,0,0,.8);
+		overflow: hidden;/*ta stoixeia pou einai ektos plesiou svinontai*/
+		box-sizing: border-box;
+		transition: all .5s ease-in-out;
+	}
+	nav .links a {
+		font-size: 20px;
+	}
+	nav :checked ~ .links {
+		bottom: 0;
+	}
+	nav .icon-burger {
+		display: block;
+	}
+	nav :checked ~ .icon-burger .line:nth-child(1) {
+		transform: translateY(10px) rotate(225deg);/*transition tou icon me tis treis grammes se X*/
+	}
+	nav :checked ~ .icon-burger .line:nth-child(3) {
+		transform: translateY(-10px) rotate(-225deg);
+	}
+	nav :checked ~ .icon-burger .line:nth-child(2) {
+		opacity: 0;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+  nav .logo,nav .logoresize {
+    justify-content: flex-start;
+    font-size: 28px;
+  }
+  
+
+}
+
+@media screen and (max-width: 300px) {
+  nav .logo,nav .logoresize {
+    justify-content: flex-start;
+    font-size: 18px;
+  }
+
+
+}
+
+/*----------------index-----------------*/
+
+/*index text*/
+
+
+
+/*container gia to text*/
+.cont{
+  width:100%;
+  height:20vh;
+  position:relative;
+  display:grid;
+  align-items:center;
+}
+
+/*styling tou h1*/
+.main-text h1{
+  color:#fff;
+  font-size:40px;
+  margin-top:20%;/*space apo panw*/
+  
+  letter-spacing:1.5px;
+  font-weight: 500;
+  text-align:center;/*grammatoseira sto kentro*/
+}
+
+
+/*index text katigories*/
+.main-text{
+  width: 90%;
+  color:#fff;
+  position: relative;
+  top: 120px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align:center;
+  align-items:center;
+}
+
+
+/*effect me grammes sto kathgories*/
+.div {
+  
+  top:35px;
+  display:inline-block;
+  text-decoration:none;
+  color:#fff;
+  align-items:center;
+  background: transparent;
+  position: relative;
+
+  font-size:30px;
+
+  --b: 0.1em;   /* paxos grammhs */
+  --c: #f4c136;
+  
+
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+  -webkit-background-clip: text,padding-box;
+          background-clip: text,padding-box;
+  transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  
+}
+/*effect otan o kersoras paei panw sto kahgories*/
+.div:hover {
+  --_p: 100%;
+  --_s: .3s;
+  color:#f4c136;
+}
+
+
+
+/*responsive index text*/
+
+@media only screen and (max-width:1022px){
+
+  /*katevazei to text otan screen width 897px*/
+  .main-text{
+    width: 100%;
+    position:relative;
+    top:200px;
+    
+  }
+  /*mikrotera grammata*/
+  .main-text h1{
+      font-size:35px;
+  }
+}
+
+@media only screen and (max-width:634px){
+  /*katevazei kiallo to text otan screen width 634px*/
+  .main-text{
+    width: 100%;
+    position:relative;
+    top:210px;
+    
+  }
+  .main-text h1{
+      font-size:30px;
+  }
+}
+
+
+/*slideshow index*/
+  
+
+.container{
+width: 85vmin;
+position: relative;
+transform: translate(-50%,-50%);
+top: 450px;
+left: 50%;
+overflow: hidden;
+border:20px solid #ecca0d;
+border-radius: 8px;
+box-shadow: 10px 25px 30px rgba(4,9,30,0.7);
+margin-top: 80px;
+margin-bottom: 400px;
+}
+
+
+.slideshow{
+width: 100%;
+display:flex;
+animation: slide 16s infinite;
+
+}
+
+
+@keyframes slide{
+  0%{
+    transform: translateX(0);
+
+  }
+
+  25%{
+    transform: translateX(0);
+
+
+  }
+
+  30%{
+    transform: translateX(-100%);
+  }
+
+  50%{
+    transform: translateX(-100%);
+  }
+
+  55%{
+    
+      transform: translateX(-200%);
+    
+  }
+  75%{
+    transform: translateX(-200%);
+  }
+
+  80%{
+    transform: translateX(-300%);
+  }
+
+  100%{
+    transform: translateX(-300%);
+  }
+}
+
+.slideshow img{
+  width:100%
+}
+
+/*----------products-notebook and smartphones----------*/
+
+
+/*container*/
+.wrapper-pn{
+  margin:auto;
+  padding:0 10%;
+
+}
+
+
+/*title*/
+.wrapper-pn h1{
+  color:#fff;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 15px;
+  text-shadow: 0 15px 10px rgba(0,0,0,0.2);
+  line-height: 200px;
+  margin-top:100px;
+}
+
+
+/*container box*/
+.container-pn{
+  display:grid;
+  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr));/*idia stoixeia gia ola ta boxes(automatos arithmos columns/rows, width)*/
+}
+
+/*box*/
+.box-pn{
+  text-align: center;
+  border-radius:5px;
+  background: #fff;
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+
+}
+/*eikona box*/
+.box-pn img{
+  height: 200px;
+}
+
+/*titlos box*/
+.box-pn h3{
+  color:#000;
+  padding:10px 0;
+  font-size:20px;
+  
+}
+
+/*paragrafos box*/
+.box-pn p{
+  color: #2e2e2e;
+  font-size:14px;
+  line-height:1.6;
+  font-size:15px;
+  font-weight: 500;
+}
+
+/*effect otan kersoras panw sto box*/
+.box-pn:hover{
+  transform:scale(1.03);
+  box-shadow:0 10px 15px rgba(0,0,0,0.3)
+}
+
+/*xrwma asteriwn*/
+.fa-star{
+  color: rgb(235, 204, 30);;
+}
+
+
+/*otan screen 770px megalwse to padding*/
+@media(max-width:770px){
+  .wrapper-pn{
+      padding:20px;
+  }
+}
+
+
+/*---------------notebook-----------------*/
+
+/*leuko plaisio*/
+.container-note{
+  margin:40px 10px 140px 10px;
+  background:#fff;
+  border-radius: 10px;
+  top:100px; 
+  grid-gap:50px 30px;
+  position:relative;
+}
+
+
+/*periexomena (fwtografia, titlos,timh... ews deite analutikh perigrafh)*/
+.first-row{
+  position:relative;
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  margin:20px;
+  
+  
+}
+
+/*timi*/
+.note-text h2{
+  font-family: 'Shrikhand', cursive;
+  font-size:45px;
+}
+
+/*epilogh xrwmatos*/
+.note-text select{
+  display: inline-block;
+  padding: 8px;
+  
+  margin-bottom:20px;
+
+}
+
+/*koumpi agoras*/
+.note-text .agora{
+  display:inline-block;
+  background:#f4c136;
+  color: #fff;
+  padding: 8px 30px;
+  text-decoration: none;
+  border-radius:30px;
+  transition: background 0.5s;
+  margin-left:50px;
+}
+
+/*effect koumpiou agoras*/
+.agora:hover{
+  background:#000;
+}
+
+
+
+.left-side{
+  overflow:hidden;
+
+}
+
+
+/*prwth eikona*/
+.left-side img{
+  width:80%;
+  margin:3px;/*perithorio apo to lefko plaisio*/
+}
+
+
+/*stoixeia*/
+.right-side{
+  display:inline;/*ola ta stoixeia sunexizontai sthn seira*/
+  align-items: center;
+  float:right;
+  
+
+}
+
+.note-text{
+  padding-left:20px;
+}
+
+.note-text p{
+  font-size: 16px;
+  line-height:26px;
+  padding-bottom:15px;
+}
+
+
+/*olo to text sthn first row pio aristera sto plaisio*/
+@media (max-width:991px){
+  .first-row .right-side .note-text{
+      padding-left:0;
+  }
+}
+
+/*otan width 768px ta grammata pane katw apo thn fwto*/
+@media (max-width:768px){
+  .first-row{
+      width:90%;
+      grid-template-columns: 1fr;
+  }
+}
+
+
+/*gri plaisio*/
+.yellow-box{
+  margin:20px;
+  padding:1.5rem;
+  border-radius: 5px;
+  background-color: #dfdfdf79;
+  justify-content: center;
+  display:flex;
+}
+
+/*xarakthristika sto kentro*/
+.second-row p{
+  
+  text-align: center;
+}
+
+/*stoixeia apo perigrafh ews telos*/
+.third-row{
+  margin:20px;
+}
+
+.third-row .yellow-box{
+  
+  margin-right:0px;
+  margin-left:0px;
+  
+}
+
+
+/*1 eikona*/
+.m1 img{
+  width: 100%;
+  display: block;
+  margin-left: auto;/*kentro*/
+  margin-right: auto;
+}
+/*keimeno 1hs eikonas*/
+.m1 h3{
+  position:relative;
+  text-align: center;
+}
+
+.m1 p{
+  position:relative; 
+  text-align:center;
+  
+}
+
+/*2 eikona*/
+.macOS-m1 img{
+  float: right;/*eikona dexia*/
+  width: 50%;
+  display: block;
+}
+
+/*keimeno 2hs eikonas*/
+.macOS-m1 p{
+  position:relative; 
+  top:20px;
+  
+}
+.macOS-m1 h3{
+  position:relative; 
+  top:20px;
+  
+}
+/*otan screen 1275px+ to keimeno pio xamhla*/
+@media (min-width:1275px){
+  .macOS-m1 h3{
+      position:relative; 
+      
+      line-height:10;
+      top:120px;
+      height:110px; 
+  }
+  .macOS-m1 p{
+      position:relative; 
+      top:120px;
+      height:110px;
+  }
+}
+/*otan screen 967px- plaisio pio panw*/
+@media (max-width:967px){
+  .macOS-m1{
+      margin-bottom: 20px;
+  }
+}
+
+/*3 eikona*/
+.Sound-cam img{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/*keimeno 3hs eikonas*/
+.Sound-cam h3{
+  position:relative;
+  text-align: center;
+}
+
+.Sound-cam p{
+  position:relative; 
+  text-align:center;
+  
+}
+
+
+/*4 eikona*/
+.Retina img{
+  float: right;
+  width: 50%;
+  display: block;
+}
+
+/*keimeno 4hs eikonas*/
+.Retina p{
+  position:relative; 
+  top:20px;
+}
+
+.Retina h3{
+  position:relative; 
+  top:20px;
+  
+}
+
+/*otan screen 1275px+ to keimeno pio xamhla*/
+@media (min-width:1275px){
+  .Retina h3{
+      position:relative; 
+      line-height:10;
+      height:110px;
+  }
+}
+
+/*otan screen 967px- plaisio pio panw*/
+@media (max-width:967px){
+  .Retina{
+      margin-bottom: 20px;
+  }
+}
+
+/*5 eikona*/
+.keyboard img{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*keimeno 5hs eikonas*/
+.keyboard h3{
+  position:relative;
+  text-align: center;
+}
+
+
+.keyboard p{
+  position:relative; 
+  text-align:center;
+  
+}
+
+/*6 eikona*/
+.usb img{
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*keimeno 6hs eikonas*/
+.usb h3{
+  position:relative;
+  text-align: center;
+}
+
+
+.usb p{
+  position:relative; 
+  text-align:center;
+  
+}
+
+/*--------------dropdown-----------------*/
+
+.nav_category_bar{
+  background-color: rgba(30, 30, 30, 0.718); /*mwb menu*/
+  margin-top: 100px; /*orizoume to keno apo pshla*/
+}
+.nav_category_bar ul{ /*edw orizoume ta xarakthristika ths listas*/
+  list-style:none; 
+  display:grid; /*layout se styl kolwnas*/
+  grid-template-columns:repeat(5,1fr);
+  white-space: nowrap;
+}
+
+.nav_category_bar ul li{ /*styling twn grammatwn tou menu*/
+  text-align: center;
+  color:white;
+  font-size:1rem;
+  font-weight:bold;
+  padding: 1rem; /* keno apo to menu gyrw gyrw*/
+  position:relative;
+  transition: .5s;
+}
+
+.nav_category_bar ul li a{/*styling gia to link*/
+  color: white;
+  text-decoration: none;
+  
+}
+
+.nav_category_bar ul li ul{/*h lista kathe ypokathgorias*/
+  display:none; /*kryvetai*/
+  
+}
+
+.nav_category_bar ul li:hover{ /*otan to pontiki einai panw se kathe kathgoria*/
+  cursor:pointer; /*o kersoras ginetai pointer*/
+  background-color: #323036; /*to koutaki pou antistoixei sthn kathgoria mayrizei*/
+  color: white; /*ta grammata ginontai aspra*/
+  
+}
+.nav_category_bar ul li:hover a{ /*styling gia to link stis ypokathgories*/
+  color:white;
+}
+
+.nav_category_bar ul li:hover ul{ /*gia thn lista poy emfanizetai otan patame panw se kathe kathgoria*/
+  display:block; /* gia na exei th morfh mias pagias sthlhs*/
+  position:absolute; /*einai akrivws apo katw apo thn kathgoria h sthlh ths ypokathgorias*/
+  left:0; /* einai ston idio katheto aksona*/
+  width:100%;
+  margin-top:1rem;
+  
+}
+
+.nav_category_bar ul li:hover ul li{ /*gia tis ypokathgories kathe kathgorias*/
+  display:grid; /* kathe kathgorias einai se koutaki*/
+  z-index: 3; /*gia na yperkalyptei otidhpote einai apo katw otan anoigw tis kathgories*/
+  grid-template-columns: 5fr 1fr; /*xwrizetai sta pente*/
+  background-color:#323036;/*xrwma*/
+  align-items: center; /*topothetountai sto kentro*/
+}
+
+.nav_category_bar ul li:hover ul li a { /*gia ta links twn ypokathgoriwn*/
+  text-align: left;
+  color:white;
+
+}
+
+.nav_category_bar ul li:hover ul li:hover { /*otan pataw panw sta links tvn ypokathgoriwn*/
+  background-color:rgba(144, 141, 146, 0.827); /*ginetai mayro*/
+}
+
+
+
+
+
+.container_image{
+  z-index: 1;
+  width: 100vmin;
+  position: relative;
+  transform: translate(-50%,-50%);
+  
+  left: 50%;
+  overflow: hidden;
+  border:20px solid #ecca0d;
+  border-radius: 8px;
+  box-shadow: 10px 25px 30px rgba(4,9,30,0.7);
+  margin-top: 350px;
+  margin-bottom: -150px;
+}
+
+.center_image{
+  width: 100%;
+  display: flex;
+}
+
+.container_image .center_image img{
+  width: 100%;
+}
+
+@media (max-width:818px){ /*media query gia to nav_category_bar ths selidas*/
+  .nav_category_bar ul{
+      grid-template-columns:1fr;
+  }
+  .nav_category_bar ul li:hover ul{
+      position:relative;
+  }
+  .nav_category_bar ul li:hover ul li{
+      background-color:#323036;
+  }
+  
+}
+
+@media (max-width:768px){ /*media query gia prosarmogh ths eikonas*/
+  
+  .prosfores,.laptop_eikona{
+    top: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+}
+
+
+
+
+@media (max-width:400px){ /*media query gia prosarmogh ths eikonas*/
+  
+  .container_image{
+    margin-top: 150px;
+    margin-bottom: -100px;
+      
+  }
+}
+
+
+
+
+
+
+/*----------------about us-------------------*/
+
+.container-au{
+   
+   color: white;
+   
+}
+
+.heading{ /*styling ths epikefalidas  About Us*/
+  line-height: 200px; /*gia to ypsos ths grammhs*/
+  margin-top:100px;  /*keno apo pshla*/
+  text-align: center; /*ta grammata vriskontai sto kentro */
+  font-size: 40px; /*megethos grammatwn*/
+  color:white;
+  letter-spacing: 2px; /*keno anamesa sta grammata */
+   
+}
+
+.profiles{ /*gia ta dyo profile*/
+   display:flex; /*san ena block*/
+   justify-content: space-around; /*katanemontai omoiomorfa sth selida me ises apo staseis apo thn arxh kai to telos*/
+   margin: 20px 80px; /*top-bottom:20px right-left:80px*/
+}
+
+.profile{
+   flex-basis:260px; /*oi arxikes diastaseis tou kathse profile*/
+}
+
+.profile .profile-img{/*eikona tou profile*/
+   height:260px; 
+   width:260px;
+   border-radius: 50%; /*gia na ginei stroggylo to profile*/
+   filter:grayscale(100%);/*einai aspromayro*/
+   cursor:pointer;
+   transition:400ms; /*xronos gia thn allagh se egxrwno*/
+}
+
+.profile:hover .profile-img{/*otam phgainei to pontiki panw sthn eikona*/
+   filter:grayscale(0); /*ginetai egxrwmh h eikona*/
+}
+
+.user-name{ /*styling gia to onoma mas*/
+   margin-top:30px;
+   font-size: 35px;
+}
+
+.profile p{ /*gia thn paragrafo*/
+   font-size:16px;
+   margin-top:20px;
+}
+
+@media only screen and (max-width:1150px){ /*media gia otan mikrainei h o8onh*/
+   .profiles{
+       flex-direction: column;
+   }
+
+   .profile{
+       display:flex;
+       flex-direction:column; /*to periexomeno ths selidas topotheteitai ka8eta*/
+       align-items:center
+   }
+
+   .profile p{
+       text-align:center;
+       margin:20px 60px 80px 60px;
+       font-size:20px;
+   }
+}
+
+@media only screen and (max-width:900px){
+   .heading{
+       font-size:40px;
+       color:white;
+       text-align:center;
+   }
+
+   .profiles{
+       margin:20px 0;
+   }
+
+   .profile p{
+       margin:20px 10px 80px 10px;
+   }
+}
+
+
+/*----------------contact us-----------------*/
+
+.contact-form h1{ /*xarakthristika epikefalidas */
+  line-height: 200px;
+  margin-top:100px;
+  text-align: center;
+
+  font-size: 30px;
+  color:white;
+  
+}
+
+
+.contact-form{ /*styling ths formas epikoinwnias*/
+   max-width: 600px;
+   margin: auto;
+   padding:0 10px;
+   overflow:hidden;
+}
+
+.contact-form-text{ /*gia thn perioxh pou eisagei ta stoixeia toy o xrhsths*/
+   display:block;
+   width:100%;
+   box-sizing:border-box;
+   margin:16px 0;
+   border:0;
+   background:#111;
+   padding:20px 40px;
+   outline:none; /*kanena perigramma*/
+   color:#ddd;
+   transition:0.5s; /*xronos pou kanei gia na energopoih8ei to kouti otan patietai*/
+}
+
+.contact-form-text:focus{
+   box-shadow: 0 0 10px 4px #ecca0d; /*h skia gyrw apo to kouti pou grafoume*/
+}
+
+textarea.contact-form-text{
+   resize:none;
+   height: 120px;/*ypsos perioxhs pou grafei o xrhsths gia thn perigrafh toy provlhmatos*/
+}
+
+.contact-form-btn{ /*gia to koympi ths ypovolhs formas*/
+  float:right;
+  border:0;
+  background:#ecca0d;
+  color:#fff;
+  padding:12px 50px;
+  border-radius:20px; 
+  cursor:pointer;
+  transition:0.5s;
+  
+}
+
+.contact-form-btn:hover{ /*allagh xrwmatwn otan pataei o xrhsths thn ypovolh*/
+   background: #fff;
+   color:#ecca0d;
+}
+
+
+
+/* The footer is fixed to the bottom of the page */
+
+footer { /*to foter vrisketai panta sto telos ths selidas*/
+    margin-top: auto;
+    
+}
+
+@media (max-height:800px) {
+    footer {
+      margin-top: auto;
+    }
+    
+}
+
+.footer-distributed {/* styling tou footer xrwma klp*/
+  
+    background-color: #2d2a30;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right { 
+    display: inline-block; /*kathe klash exei morfh sthlhs*/
+    vertical-align: top; /*ksekinaei apo pshla to periexomeno kathe sthlhs*/
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left { /*gia thn aristerh sthlh*/
+    width: 30%;
+}
+
+/* styling gia to logo mazi me thn eikona*/
+.footer-distributed .logoresize{
+  width: 50px; 
+  height: 50px; 
+  display:inline; 
+  white-space:nowrap;
+  vertical-align: top;
+  
+}
+
+.footer-distributed .logo{
+  color: #ffffff;
+  font: normal 36px 'myFont', cursive;
+  margin: 0;
+
+  display:inline; 
+  white-space:nowrap;
+  
+}
+
+
+/* Footer links */
+
+.footer-distributed .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a { 
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name { /*gia to company name*/
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center {
+    width: 35%;
+}
+
+.footer-distributed .footer-center i { /*gia ta icons ths kentrikhs sthlhs*/
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-distributed .footer-center p { /*styling twn grammatwn poy synodeyoyn ta icons*/
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span { /*gia thn kypselh diaforetiko megethos gramatoseiras**/
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distributed .footer-center p a { /*e-mail*/
+    color: #ecca0d;
+    text-decoration: none;
+    
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right {
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about { /*gia thn paragrafo*/
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span { /* gia thn leksh electroshock*/
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a { /* panw sta icons*/
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover { /*allagh otan patame panw sta icons*/
+    background-color: #ecca0d;
+}
+
+.footer-links a:hover { /*ta links ginontai kitrina*/
+    color: #ecca0d;
+}
+
+@media (max-width: 880px) { /*media etsi vste otan mikrainei h selida na erxontai katheta*/
+    .footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-distributed .footer-center i {
+        margin-left: 0;
+    }
+}
+
+
+
+@media (max-width: 977px) {
+  .footer-distributed .footer-left{
+      margin-right:30px;
+  }
+  
+}     
+
+
+
+
+/*----------------sign-up-----------------*/
+
+/*kitrino container*/
+.container-signup{
+  max-width:700px;
+  width:100%;
+  position:relative;
+  background: #8d8671 ;
+  /*background:#e2d58c93;*/
+  border-radius: 10px;
+  padding:28px;
+  margin:auto;
+}
+
+
+/*sign up titlos*/
+.title{
+  line-height: 200px;
+  margin-top:100px;
+  text-align: center;
+  font-size: 40px;
+  color:white;
+  letter-spacing: 2px;
+}
+
+
+/*mavra plaisia*/
+fieldset{
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border-color: #000;
+}
+
+/*titlos fieldset*/
+legend{
+  font-size:larger;
+  font-weight: bolder;
+  text-align: center;
+}
+
+/*margin group stoixeiwn*/
+.form-group{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 20px;
+
+}
+
+/*margin group radio*/
+.form-group2 .input-group{
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  
+}
+
+/*radio se sthlh*/
+.form-group2 .input-group label{
+  display: block;
+}
+
+/*plaisio diefthinsi apostolhhs dexiotera*/
+.form-group2 .shipping-address{
+  position: relative;
+  margin-left: 20px;
+}
+
+
+/*lefka plaisia*/
+.container-signup input{
+  background-color:#fff;
+}
+
+
+
+/*diefkriniseis*/
+details {
+  border: 1px solid rgba(0, 0, 0, 0.521);
+  padding: .5em .5em 0;
+  box-sizing: border-box;
+}
+/*title*/
+summary {
+  font-weight:900;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+/*expand diefkriniseis*/
+details[open] {
+  padding: .5em;
+  transition: all 0.5s ease-in-out; /* Smooth transition */
+}
+
+/*grammh otan expand diefkr*/
+details[open] summary {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.521);
+  margin-bottom: .5em;
+}
+
+
+/*-----------------erwthmatologio------------------*/
+
+
+/*container erwthmatologiou*/
+.container-questionnaire{
+  max-width:700px;
+  width:100%;
+  position:relative;
+  background:#8d8671;
+  border-radius: 10px;
+  padding:28px;
+  margin:auto;
+  margin-bottom: 20px;
+}
+
+
+.container-questionnaire .input-group{
+  margin-top:20px;
+  margin-bottom: 20px;
+}
+
+/*titlos erwthmatologiou*/
+.title2{
+  line-height: 100px;
+  margin-top:20px;
+  text-align: center;
+  font-size: 40px;
+  color:white;
+  letter-spacing: 2px;
+}
+
+/*koumpi upovolhs */
+.lastbtn{
+  max-width:700px;
+  width:100%;
+  position:relative;
+  margin:auto;
+} 
+
+
+        
